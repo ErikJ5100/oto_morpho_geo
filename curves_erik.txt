@@ -1,0 +1,5 @@
+sulcus_dorsal	Inicio_ostium_antirostrum	Fim_cauda
+sulcus_ventral	Inicio_ostium_rostrum	Fim_cauda
+otolito_dorsal	Antirostrum	Projecao_posterior_antirostrum
+otolito_ventral	Rostrum	Projecao_posterior_antirostrum
+abertura_ostium	Rostrum	Antirostrum
