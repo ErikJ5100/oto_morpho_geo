@@ -1,0 +1,49 @@
+<shapes type=list>
+	<scaling type=logical names=FALSE length=1 as.numeric=FALSE >NA</scaling>
+	<landmarks.pixel type=matrix rownames=TRUE colnames=FALSE nrow=19 ncol=2 as.numeric=TRUE >
+		Rostrum	590	907
+		Projecao_posterior_rostrum	1798	898
+		Antirostrum	708	719
+		Projecao_posterior_antirostrum	1789	739
+		Projecao_ventral_antirostrum	695	1100
+		Projecao_posterior_proj_ventral_antirostrum	1782	1094
+		Altura_dorsal	1319	545
+		Altura_ventral	1214	1289
+		Inicio_ostium_rostrum	659	1054
+		Curvatura_ostium_rostrum	1082	944
+		Inicio_cauda_rostrum	1102	856
+		Curvatura_cauda_1_rostrum	1471	891
+		Curvatura_cauda_2_rostrum	1502	1023
+		Fim_cauda	1480	1198
+		Curvatura_cauda_2_antirostrum	1610	944
+		Curvatura_cauda_1_antirostrum	1527	790
+		Inicio_cauda_antirostrum	1084	770
+		Curvatura_ostium_antirostrum	1006	704
+		Inicio_ostium_antirostrum	737	727
+	</landmarks.pixel>
+	<curves.control type=list>
+		<sulcus_dorsal type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			737	727
+			1480	1198
+		</sulcus_dorsal>
+		<sulcus_ventral type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			659	1054
+			1480	1198
+		</sulcus_ventral>
+		<otolito_dorsal type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			708	719
+			1789	739
+		</otolito_dorsal>
+		<otolito_ventral type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			590	907
+			1789	739
+		</otolito_ventral>
+		<abertura_ostium type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			590	907
+			708	719
+		</abertura_ostium>
+	</curves.control>
+	<curves.pixel type=list>
+	</curves.pixel>
+</shapes>
+
