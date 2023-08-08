@@ -1,21 +1,24 @@
-'''
+
+"""
 análises morphogeo - pibics da galera
-'''
+"""
 
 rm(list = ls())
 
 library (geomorph)
+library (segmented)
+library (Morpho)
 
 #importar coordenadas landmarks
-con_nobilis <- readland.tps("Landmarks_CN.TPS", specID = "ID")
+haem_todos <- readland.tps("Landmarks_TODOS.TPS", specID = "ID")
 
 #importar classifiers
-con_nobilis_class <- read.csv("CN_classifier.csv")
+haem_class <- read.csv("Haemulidae_separados_final.csv")
 
 #procrustres
 
-con_nobilis_gpa <- gpagen(con_nobilis)
-plot(con_nobilis_gpa)
+haem_gpa <- gpagen(haem_todos)
+plot(haem_gpa)
 
 
 summary (con_nobilis_gpa, consensus) 
