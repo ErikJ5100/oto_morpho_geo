@@ -10,15 +10,18 @@ library (segmented)
 library (Morpho)
 
 #importar coordenadas landmarks
-haem_todos <- readland.tps("Landmarks_TODOS.TPS", specID = "ID")
+haem_todos <- readland.tps("Landmarks_SEO_TUDO.TPS", specID = "ID")
 
 #importar classifiers
 haem_class <- read.csv("Haemulidae_separados_final.csv")
 
-#procrustres
+#análise de procrustes
 
 haem_gpa <- gpagen(haem_todos)
+
 plot(haem_gpa)
 
+#PCA
+PCA <- gm.prcomp(haem_gpa$coords)
 
-summary (con_nobilis_gpa, consensus) 
+
