@@ -10,7 +10,7 @@ library (segmented)
 library (Morpho)
 
 #importar coordenadas landmarks
-haem_todos <- readland.tps("Landmarks_TODOS.TPS", specID = "ID")
+haem_todos <- readland.tps("Landmarks_SEO_TUDO.TPS", specID = "ID")
 
 #importar classifiers
 haem_class <- read.csv("Haemulidae_separados_final.csv")
@@ -21,4 +21,12 @@ haem_gpa <- gpagen(haem_todos)
 plot(haem_gpa)
 
 
-summary (con_nobilis_gpa, consensus) 
+summary (con_nobilis_gpa, consensus)
+
+# tentativa de dividir os landmarks em dois subsets
+
+#subset sulcus
+
+
+
+
