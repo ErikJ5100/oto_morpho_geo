@@ -1,14 +1,12 @@
-<<<<<<< HEAD
-
-"""
-análises morphogeo - pibics da galera
-"""
+""" análises morphogeo - pibics da galera """
 
 rm(list = ls())
 
 library (geomorph)
 library (segmented)
 library (Morpho)
+library (ggplot2)
+library (ggfortify)
 
 #importar coordenadas landmarks
 haem_todos <- readland.tps("Landmarks_SEO_TUDO.TPS", specID = "ID")
@@ -23,40 +21,20 @@ haem_gpa <- gpagen(haem_todos)
 plot(haem_gpa)
 
 #PCA
-PCA <- gm.prcomp(haem_gpa$coords)
+PCA <- gm.prcomp(haem_gpa$coords, scale = TRUE)
 
+plot(PCA)
 
-=======
+summary(PCA) #visualização dos resultados da PCA
+scores.PCA <- PCA$x[1:34] #scores de cada indivíduo
+eigen.PCA <- PCA$d
 
-"""
-análises morphogeo - pibics da galera
-"""
+'''
+esse bloco abaixo era uma tentativa de replicar a função segment pra definir
+quantos PCs explicavam a variabilidade
+'''
+pca.lm <- lm(eigen.PCA ~ scores.PCA)
 
-rm(list = ls())
+teste <- segmented(pca.lm, seg.Z = ~scores.PCA)
+plot(teste)
 
-library (geomorph)
-library (segmented)
-library (Morpho)
-
-#importar coordenadas landmarks
-haem_todos <- readland.tps("Landmarks_SEO_TUDO.TPS", specID = "ID")
-
-#importar classifiers
-haem_class <- read.csv("Haemulidae_separados_final.csv")
-
-#procrustres
-
-haem_gpa <- gpagen(haem_todos)
-plot(haem_gpa)
-
-
-summary (con_nobilis_gpa, consensus)
-
-# tentativa de dividir os landmarks em dois subsets
-
-#subset sulcus
-
-
-
-
->>>>>>> main
