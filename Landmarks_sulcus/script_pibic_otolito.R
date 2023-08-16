@@ -36,8 +36,12 @@ plot(PCA, col = habitat)
 plot (PCA, col = maturacao)
 
 summary(PCA) #visualização resultados da PCA
-scores.PCA <- PCA$x[1:34] #scores de cada indivíduo
+
+scores.PCA <- PCA$x[,1:3] #scores de cada indivíduo
+
 eigen.PCA <- PCA$d
+
+print(eigen.PCA)
 
 #análise da disparidade morfológica entre grupos
 
@@ -57,14 +61,9 @@ pc.plot <- plotAllometry(haem_fit, haem_gdf$Csize, logsz = TRUE,
                          method = "size.shape", pch = 19, 
                          col = as.numeric(interaction(haem_gdf$habitat, haem_gdf$maturacao)))
 
+#canonical variate analysis
+
+cvall <- CVA(scores.PCA, habitat)
 
 
-'''
-esse bloco abaixo era uma tentativa de replicar a função segment pra definir
-quantos PCs explicavam a variabilidade
-'''
-pca.lm <- lm(eigen.PCA ~ scores.PCA)
-
-teste <- segmented(pca.lm, seg.Z = ~scores.PCA)
-plot(teste)
 
