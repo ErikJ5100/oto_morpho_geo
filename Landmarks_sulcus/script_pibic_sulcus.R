@@ -35,7 +35,7 @@ plot(PCA, col = habitat)
 plot (PCA, col = maturacao)
 
 summary(PCA) #visualização resultados da PCA
-scores.PCA <- PCA$x[1:34] #scores de cada indivíduo
+scores.PCA <- PCA$x #scores de cada indivíduo
 eigen.PCA <- PCA$d
 
 #análise da disparidade morfológica entre grupos
@@ -57,13 +57,60 @@ pc.plot <- plotAllometry(haem_fit, haem_gdf$Csize, logsz = TRUE,
                          col = as.numeric(interaction(haem_gdf$habitat, haem_gdf$maturacao)))
 
 
+#Canonical Variate Analysis
+
+haem_sulcus_cva <- CVA (scores.PCA, habitat)
+
+typprobs <- typprobClass (haem_sulcus_cva$CVscores, group = maturacao)
+
+if (require(car)) {
+  scatterplot(haem_sulcus_cva$CVscores [,1], haem_sulcus_cva$CVscores[,2], 
+              groups = typprobs$groupaffinCV, smooth = FALSE, reg.line = FALSE)
+}
+
+# plot da CVA
+
+plot (haem_sulcus_cva$CVscores, col = habitat, pch = as.numeric (maturacao), typ = "n", asp = 1,
+      xlab = paste ("1st canonical axis", paste (round(haem_sulcus_cva$Var[1,2], 1),"%")),
+      ylab = paste ("2nd canonical axis", paste (round(haem_sulcus_cva$Var[2,2], 1), "%")))
+
+text (haem_sulcus_cva$CVscores, as.character(maturacao), col = as.numeric(habitat), cex = 0.5)
+
+#adicionar convex hull
+
+for (jj in 1:length (levels (habitat))) {
+  ii = levels(maturacao) [jj]
+  kk = chull (haem_sulcus_cva$CVscores[habitat == ii, 1:2])
+  lines (haem_sulcus_cva$CVscores[habitat == ii, 1][c(kk, kk[1])],
+         haem_sulcus_cva$CVscores[habitat == ii, 2][c(kk, kk[1])], col = jj)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 '''
 esse bloco abaixo era uma tentativa de replicar a função segment pra definir
 quantos PCs explicavam a variabilidade
 '''
-pca.lm <- lm(eigen.PCA ~ scores.PCA)
+#pca.lm <- lm(eigen.PCA ~ scores.PCA)
 
-teste <- segmented(pca.lm, seg.Z = ~scores.PCA)
+#teste <- segmented(pca.lm, seg.Z = ~scores.PCA)
 plot(teste)
 
