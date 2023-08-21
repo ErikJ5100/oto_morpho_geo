@@ -53,6 +53,12 @@ haem_oto_disparidade <- morphol.disparity (haem_oto_gpa$coords ~ 1, groups = ~ h
 
 print(haem_oto_disparidade)
 
+#disparidade morfológica considerando alometria
+
+haem_oto_disp_alom <- morphol.disparity(haem_oto_gpa$coords ~ haem_oto_gpa$Csize, groups = ~ habitat*maturacao,
+                                        data = haem_gdf, print.progress = FALSE)
+
+
 haem_fit <- procD.lm(haem_oto_gpa$coords ~1, groups = ~habitat * maturacao, 
          data = haem_gdf, print.progress = FALSE)
 
@@ -60,6 +66,15 @@ haem_fit <- procD.lm(haem_oto_gpa$coords ~1, groups = ~habitat * maturacao,
 pc.plot <- plotAllometry(haem_fit, haem_gdf$Csize, logsz = TRUE,
                          method = "size.shape", pch = 19, 
                          col = as.numeric(interaction(haem_gdf$habitat, haem_gdf$maturacao)))
+
+summary(pc.plot$size.shape.PCA)
+
+fit3 <- procD.lm(haem_oto_gpa$coords ~ habitat, data = haem_gdf, iter = 0,
+                 print.progress = FALSE)
+
+plotAllometry(fit3, size = haem_gdf$Csize, logsz = T,
+              method = "RegScore", pch = 19, col = as.factor(haem_gdf$especie))
+
 
 #canonical variate analysis
 
