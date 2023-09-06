@@ -1,0 +1,82 @@
+<shapes type=list>
+	<square.size type=vector names=FALSE length=1 as.numeric=TRUE >0.6027</square.size>
+	<checkerboard.ny type=vector names=FALSE length=1 as.numeric=TRUE >6</checkerboard.ny>
+	<checkerboard.nx type=vector names=FALSE length=1 as.numeric=TRUE >3</checkerboard.nx>
+	<ruler.pixel type=vector names=FALSE length=1 as.numeric=TRUE >49</ruler.pixel>
+	<ruler.interval type=vector names=FALSE length=1 as.numeric=TRUE >1</ruler.interval>
+	<scaling.units type=vector names=FALSE length=1 as.numeric=FALSE >mm</scaling.units>
+	<scaling type=vector names=FALSE length=1 as.numeric=TRUE >0.0204081632653061</scaling>
+	<landmarks.pixel type=matrix rownames=TRUE colnames=FALSE nrow=19 ncol=2 as.numeric=TRUE >
+		Rostrum	148	312
+		Projecao_posterior_rostrum	589	307
+		Antirostrum	220	228
+		Projecao_posterior_antirostrum	556	231
+		Projecao_ventral_antirostrum	223	406
+		Projecao_posterior_proj_ventral_antirostrum	530	404
+		Altura_dorsal	355	166
+		Altura_ventral	356	450
+		Inicio_ostium_rostrum	158	336
+		Curvatura_ostium_rostrum	298	298
+		Inicio_cauda_rostrum	313	272
+		Curvatura_cauda_1_rostrum	459	296
+		Curvatura_cauda_2_rostrum	484	336
+		Fim_cauda	485	405
+		Curvatura_cauda_2_antirostrum	514	321
+		Curvatura_cauda_1_antirostrum	481	258
+		Inicio_cauda_antirostrum	297	243
+		Curvatura_ostium_antirostrum	279	232
+		Inicio_ostium_antirostrum	227	225
+	</landmarks.pixel>
+	<landmarks.scaled type=matrix rownames=TRUE colnames=FALSE nrow=19 ncol=2 as.numeric=TRUE >
+		Rostrum	3.02040816326531	-6.36734693877551
+		Projecao_posterior_rostrum	12.0204081632653	-6.26530612244898
+		Antirostrum	4.48979591836735	-4.6530612244898
+		Projecao_posterior_antirostrum	11.3469387755102	-4.71428571428571
+		Projecao_ventral_antirostrum	4.55102040816327	-8.28571428571428
+		Projecao_posterior_proj_ventral_antirostrum	10.8163265306122	-8.24489795918367
+		Altura_dorsal	7.24489795918367	-3.38775510204082
+		Altura_ventral	7.26530612244898	-9.18367346938775
+		Inicio_ostium_rostrum	3.22448979591837	-6.85714285714286
+		Curvatura_ostium_rostrum	6.08163265306122	-6.08163265306122
+		Inicio_cauda_rostrum	6.38775510204082	-5.55102040816327
+		Curvatura_cauda_1_rostrum	9.36734693877551	-6.04081632653061
+		Curvatura_cauda_2_rostrum	9.87755102040816	-6.85714285714286
+		Fim_cauda	9.89795918367347	-8.26530612244898
+		Curvatura_cauda_2_antirostrum	10.4897959183673	-6.55102040816326
+		Curvatura_cauda_1_antirostrum	9.81632653061224	-5.26530612244898
+		Inicio_cauda_antirostrum	6.06122448979592	-4.95918367346939
+		Curvatura_ostium_antirostrum	5.69387755102041	-4.73469387755102
+		Inicio_ostium_antirostrum	4.63265306122449	-4.59183673469388
+	</landmarks.scaled>
+	<curves.control type=list>
+		<sulcus_dorsal type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			227	225
+			485	405
+		</sulcus_dorsal>
+		<sulcus_ventral type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			158	336
+			485	405
+		</sulcus_ventral>
+		<otolito_dorsal type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			220	228
+			556	231
+		</otolito_dorsal>
+		<otolito_ventral type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			148	312
+			556	231
+		</otolito_ventral>
+		<abertura_ostium type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			148	312
+			220	228
+		</abertura_ostium>
+	</curves.control>
+	<curves.pixel type=list>
+	</curves.pixel>
+	<ruler.points type=matrix rownames=TRUE colnames=FALSE nrow=4 ncol=2 as.numeric=TRUE >
+		Ruler point 1	243	237
+		Ruler point 2	292	237
+		Ruler point 3	342	237
+		Ruler point 4	390	236
+	</ruler.points>
+</shapes>
+

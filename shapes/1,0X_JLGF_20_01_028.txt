@@ -1,5 +1,6 @@
 <shapes type=list>
-	<square.size type=vector names=FALSE length=1 as.numeric=TRUE >0.6027</square.size>
+	<square.size type=vector names=FALSE length=1 as.numeric=TRUE >1.99974876084236</square.size>
+	<square.pixel type=vector names=FALSE length=1 as.numeric=TRUE >97.9876892812757</square.pixel>
 	<checkerboard.ny type=vector names=FALSE length=1 as.numeric=TRUE >6</checkerboard.ny>
 	<checkerboard.nx type=vector names=FALSE length=1 as.numeric=TRUE >3</checkerboard.nx>
 	<ruler.pixel type=vector names=FALSE length=1 as.numeric=TRUE >49</ruler.pixel>
@@ -72,5 +73,25 @@
 	</curves.control>
 	<curves.pixel type=list>
 	</curves.pixel>
+	<checker.pixel type=matrix rownames=FALSE colnames=FALSE nrow=18 ncol=2 as.numeric=TRUE >
+		162.386479506546	343.171471605219
+		160.132617346945	242.80577814483
+		166.549934337382	145.778898612561
+		254.922831951078	343.028550648853
+		259.474768170383	240.718461910367
+		260.821274844895	148.336654967717
+		353.841986772771	346.828902066751
+		351.682598358074	252.297727342128
+		356.797825391232	151.398526115216
+		449.03763775253	345.803046479679
+		447.527141259726	246.854613716661
+		451.158958327602	155.163106688981
+		541.356588748436	356.282507766415
+		550.193596748838	250.810869173963
+		534.828310896305	150.035150836129
+		637.944228255878	357.396144107643
+		641.918537752951	257.988762382169
+		645.816255154178	155.687221895666
+	</checker.pixel>
 </shapes>
 

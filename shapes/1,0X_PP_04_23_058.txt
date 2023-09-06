@@ -72,5 +72,11 @@
 	</curves.control>
 	<curves.pixel type=list>
 	</curves.pixel>
+	<ruler.points type=matrix rownames=TRUE colnames=FALSE nrow=4 ncol=2 as.numeric=TRUE >
+		Ruler point 1	243	237
+		Ruler point 2	292	237
+		Ruler point 3	342	237
+		Ruler point 4	390	236
+	</ruler.points>
 </shapes>
 

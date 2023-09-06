@@ -72,5 +72,25 @@
 	</curves.control>
 	<curves.pixel type=list>
 	</curves.pixel>
+	<checker.pixel type=matrix rownames=FALSE colnames=FALSE nrow=18 ncol=2 as.numeric=TRUE >
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+	</checker.pixel>
 </shapes>
 
