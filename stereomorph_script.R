@@ -1,5 +1,5 @@
 library(StereoMorph)
-
+library(geomorph)
 # código para iniciar a aplicação
 # imagge.file = pasta onde estão as imagens
 # shapes.file = arquivo criado com os valores de landmarks e curvas
@@ -11,3 +11,8 @@ digitizeImage(image.file = 'teste', shapes.file = 'shapes',
               curves.ref = 'curves_erik.txt')
 
 
+shapes <- readShapes("shapes", fields = NULL)
+
+ldk_shapes <- readland.shapes(shapes, scaled = TRUE)
+
+print(ldk_shapes)
