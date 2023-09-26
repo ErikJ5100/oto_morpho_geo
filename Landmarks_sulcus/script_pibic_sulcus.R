@@ -9,16 +9,25 @@ library (ggplot2)
 library (ggfortify)
 
 #importar coordenadas landmarks
-haem_sulcus <- readland.tps("Landmarks_S_TUDO.TPS", specID = "ID")
+haem_sulcus <- readland.tps("Landmarks_TODOS_menos_teste.TPS", specID = "ID", 
+                            readcurves = TRUE)
+
+define.sliders(haem_sulcus, nsliders = 6, write.file = TRUE)
+
+sliders = rbind(define.sliders())
 
 #importar classifiers
 haem_class <- read.csv("Haemulidae_separados_final.csv")
 
 #análise de procrustes
 
-haem_sulcus_gpa <- gpagen(haem_sulcus)
+haem_sulcus_gpa <- gpagen(haem_sulcus, curves = curva, ProcD = TRUE)
 
-plot(haem_sulcus_gpa)
+curva <- as.matrix(read.csv("curveslide.csv", header = TRUE))
+
+digit.curves(start = 1, curve = curva, nPoints = 3, closed = FALSE)
+
+plot(haem_sulcus_gpa$consensus)
 
 #transformar os classifiers em fatores
 
