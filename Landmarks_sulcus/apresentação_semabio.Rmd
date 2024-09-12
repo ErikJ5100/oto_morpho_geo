@@ -1,0 +1,172 @@
+---
+title: "minicurso_semabio"
+author: "galera do laepp"
+output:
+  slidy_presentation: default
+  powerpoint_presentation: default
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Slide with Bullets
+
+- Instalar e carregar os pacotes
+- Baixar os dados de landmarks
+- As análises mais básicas que vocês verão hoje
+
+## Carregando os pacotes
+
+```{r, echo = FALSE}
+library (geomorph)
+```
+
+`library (geomorph)`
+
+## Vamos utilizar esses arquivos
+
+- Landmarks_S_TUDO.TPS
+- Landmarks_O_TUDO.TPS
+- Haemulidae_separados_final.csv
+
+## Importando dados - coordenadas
+
+```{r}
+#importar coordenadas landmarks
+haem_oto <- readland.tps("Landmarks_SEO_TUDO.TPS", specID = "ID")
+```
+O aviso acima significa que não tem pontos de curvas definidos nesses dados.
+
+`haem_todos <- readland.tps("Landmarks_SEO_TUDO.TPS", specID = "ID")`
+
+## Importando dados - classificadores
+
+```{r}
+#importar classifiers
+haem_class <- read.csv("Haemulidae_separados_final.csv")
+```
+
+`haem_class <- read.csv("Haemulidae_separados_final.csv")`
+
+## transformar os classifiers em fatores
+
+```{r}
+habitat <- factor(haem_class$Habitat)
+maturacao <- factor (haem_class$Maturacao)
+local <- factor (haem_class$Localidade)
+especie <- factor (haem_class$Pop)
+sexo <- factor (haem_class$Sexo)
+```
+
+`habitat <- factor(haem_class$Habitat)`
+
+`maturacao <- factor (haem_class$Maturacao)`
+
+`local <- factor (haem_class$Localidade)`
+
+`especie <- factor (haem_class$Pop)`
+
+`sexo <- factor (haem_class$Sexo)`
+
+## análise de procrustes
+
+a função `gpagen` cria um objeto resultado da `análise generalizada de procrustes`, que basicamente tenta juntar as coordenadas de todos os espécimes o mais próximo possível
+
+`haem_oto_gpa <- gpagen(haem_oto)`
+
+`plot(haem_oto_gpa)`
+``` {r, include = FALSE}
+haem_oto_gpa <- gpagen(haem_oto)
+```
+
+```{r}
+plot(haem_oto_gpa)
+```
+
+## PCA 
+
+`PCA <- gm.prcomp(haem_oto_gpa$coords, scale = TRUE`
+```{r}
+PCA <- gm.prcomp(haem_oto_gpa$coords, scale = TRUE)
+plot (PCA, col = maturacao)
+```
+
+## Visualização resultados da PCA - scores
+```{r}
+scores.PCA <- PCA$x[,1:3] 
+head(scores.PCA)
+```
+## Visualização resultados da PCA - eigenvalues
+```{r}
+eigen.PCA <- PCA$d
+print(eigen.PCA)
+```
+
+`eigen.PCA <- PCA$d`
+`print(eigen.PCA)`
+
+## CVA - canonical variate analysis
+
+```{r, eval = FALSE}
+haem_sulcus_cva <- CVA (scores.PCA, habitat)
+
+typprobs <- typprobClass (haem_sulcus_cva$CVscores, group = maturacao)
+
+if (require(car)) {
+  scatterplot(haem_sulcus_cva$CVscores [,1], haem_sulcus_cva$CVscores[,2], 
+              groups = typprobs$groupaffinCV, smooth = FALSE, reg.line = FALSE)
+}
+```
+
+`haem_sulcus_cva <- CVA (scores.PCA, habitat)`
+
+`typprobs <- typprobClass (haem_sulcus_cva$CVscores, group = maturacao)`
+
+`if (require(car)) {`
+` scatterplot(haem_sulcus_cva$CVscores [,1], haem_sulcus_cva$CVscores[,2], `
+`             groups = typprobs$groupaffinCV, smooth = FALSE, reg.line = FALSE)`
+`}`
+
+## plot da CVA
+
+```{r}
+plot (haem_sulcus_cva$CVscores, col = habitat, pch = as.numeric (maturacao), typ = "n", asp = 1,
+      xlab = paste ("1st canonical axis", paste (round(haem_sulcus_cva$Var[1,2], 1),"%")),
+      ylab = paste ("2nd canonical axis", paste (round(haem_sulcus_cva$Var[2,2], 1), "%")))
+
+text (haem_sulcus_cva$CVscores, as.character(maturacao), col = as.numeric(habitat), cex = 0.5)
+```
+
+`plot (haem_sulcus_cva$CVscores, col = habitat, pch = as.numeric (maturacao), typ = "n", asp = 1,`
+      `xlab = paste ("1st canonical axis", paste (round(haem_sulcus_cva$Var[1,2], 1),"%")),`
+      `ylab = paste ("2nd canonical axis", paste (round(haem_sulcus_cva$Var[2,2], 1), "%")))`
+
+`text (haem_sulcus_cva$CVscores, as.character(maturacao), col = as.numeric(habitat), cex = 0.5)`
+
+## adicionar convex hull
+
+```{r}
+for (jj in 1:length (levels (habitat))) {
+  ii = levels(maturacao) [jj]
+  kk = chull (haem_sulcus_cva$CVscores[habitat == ii, 1:2])
+  lines (haem_sulcus_cva$CVscores[habitat == ii, 1][c(kk, kk[1])],
+         haem_sulcus_cva$CVscores[habitat == ii, 2][c(kk, kk[1])], col = jj)
+}
+```
+
+`for (jj in 1:length (levels (habitat))) {`
+  `ii = levels(maturacao) [jj]`
+  `kk = chull (haem_sulcus_cva$CVscores[habitat == ii, 1:2])`
+  `lines (haem_sulcus_cva$CVscores[habitat == ii, 1][c(kk, kk[1])],`
+         `haem_sulcus_cva$CVscores[habitat == ii, 2][c(kk, kk[1])], col = jj)`
+`}`
+
+## usando o ggplot2
+
+```{r, echo = FALSE}
+library (ggplot2)
+```
+
+`library (ggplot2)`
+

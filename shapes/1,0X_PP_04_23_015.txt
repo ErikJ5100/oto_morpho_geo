@@ -1,5 +1,11 @@
 <shapes type=list>
-	<scaling type=logical names=FALSE length=1 as.numeric=FALSE >NA</scaling>
+	<square.size type=vector names=FALSE length=1 as.numeric=TRUE >0.6027</square.size>
+	<checkerboard.ny type=vector names=FALSE length=1 as.numeric=TRUE >6</checkerboard.ny>
+	<checkerboard.nx type=vector names=FALSE length=1 as.numeric=TRUE >3</checkerboard.nx>
+	<ruler.pixel type=vector names=FALSE length=1 as.numeric=TRUE >49</ruler.pixel>
+	<ruler.interval type=vector names=FALSE length=1 as.numeric=TRUE >1</ruler.interval>
+	<scaling.units type=vector names=FALSE length=1 as.numeric=FALSE >mm</scaling.units>
+	<scaling type=vector names=FALSE length=1 as.numeric=TRUE >0.0204081632653061</scaling>
 	<landmarks.pixel type=matrix rownames=TRUE colnames=FALSE nrow=19 ncol=2 as.numeric=TRUE >
 		Rostrum	138	294
 		Projecao_posterior_rostrum	539	287
@@ -21,6 +27,27 @@
 		Curvatura_ostium_antirostrum	267	211
 		Inicio_ostium_antirostrum	197	222
 	</landmarks.pixel>
+	<landmarks.scaled type=matrix rownames=TRUE colnames=FALSE nrow=19 ncol=2 as.numeric=TRUE >
+		Rostrum	2.81632653061224	-6
+		Projecao_posterior_rostrum	11	-5.85714285714286
+		Antirostrum	3.93877551020408	-4.55102040816327
+		Projecao_posterior_antirostrum	10.4897959183673	-4.63265306122449
+		Projecao_ventral_antirostrum	4	-7.3469387755102
+		Projecao_posterior_proj_ventral_antirostrum	10.2857142857143	-7.40816326530612
+		Altura_dorsal	6.51020408163265	-3.22448979591837
+		Altura_ventral	6.40816326530612	-8.51020408163265
+		Inicio_ostium_rostrum	3	-6.36734693877551
+		Curvatura_ostium_rostrum	5.75510204081633	-5.69387755102041
+		Inicio_cauda_rostrum	6.02040816326531	-5.16326530612245
+		Curvatura_cauda_1_rostrum	8.71428571428571	-5.3265306122449
+		Curvatura_cauda_2_rostrum	9.36734693877551	-7
+		Fim_cauda	9.24489795918367	-7.71428571428571
+		Curvatura_cauda_2_antirostrum	9.89795918367347	-6.83673469387755
+		Curvatura_cauda_1_antirostrum	9.06122448979592	-4.69387755102041
+		Inicio_cauda_antirostrum	5.79591836734694	-4.57142857142857
+		Curvatura_ostium_antirostrum	5.44897959183673	-4.30612244897959
+		Inicio_ostium_antirostrum	4.02040816326531	-4.53061224489796
+	</landmarks.scaled>
 	<curves.control type=list>
 		<sulcus_dorsal type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
 			197	222
@@ -45,5 +72,25 @@
 	</curves.control>
 	<curves.pixel type=list>
 	</curves.pixel>
+	<checker.pixel type=matrix rownames=FALSE colnames=FALSE nrow=18 ncol=2 as.numeric=TRUE >
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+		NA	NA
+	</checker.pixel>
 </shapes>
 

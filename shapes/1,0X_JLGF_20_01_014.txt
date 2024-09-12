@@ -1,0 +1,97 @@
+<shapes type=list>
+	<square.size type=vector names=FALSE length=1 as.numeric=TRUE >2.01104378597461</square.size>
+	<square.pixel type=vector names=FALSE length=1 as.numeric=TRUE >98.5411455127559</square.pixel>
+	<checkerboard.ny type=vector names=FALSE length=1 as.numeric=TRUE >6</checkerboard.ny>
+	<checkerboard.nx type=vector names=FALSE length=1 as.numeric=TRUE >3</checkerboard.nx>
+	<ruler.pixel type=vector names=FALSE length=1 as.numeric=TRUE >49</ruler.pixel>
+	<ruler.interval type=vector names=FALSE length=1 as.numeric=TRUE >1</ruler.interval>
+	<scaling.units type=vector names=FALSE length=1 as.numeric=FALSE >mm</scaling.units>
+	<scaling type=vector names=FALSE length=1 as.numeric=TRUE >0.0204081632653061</scaling>
+	<landmarks.pixel type=matrix rownames=TRUE colnames=FALSE nrow=19 ncol=2 as.numeric=TRUE >
+		Rostrum	334	916
+		Projecao_posterior_rostrum	1204	886
+		Antirostrum	439	771
+		Projecao_posterior_antirostrum	1116	747
+		Projecao_ventral_antirostrum	451	1133
+		Projecao_posterior_proj_ventral_antirostrum	1136	1117
+		Altura_dorsal	852	638
+		Altura_ventral	852	1254
+		Inicio_ostium_rostrum	336	956
+		Curvatura_ostium_rostrum	675	926
+		Inicio_cauda_rostrum	703	866
+		Curvatura_cauda_1_rostrum	987	914
+		Curvatura_cauda_2_rostrum	1027	982
+		Fim_cauda	1071	1093
+		Curvatura_cauda_2_antirostrum	1081	936
+		Curvatura_cauda_1_antirostrum	1019	837
+		Inicio_cauda_antirostrum	665	791
+		Curvatura_ostium_antirostrum	614	749
+		Inicio_ostium_antirostrum	425	795
+	</landmarks.pixel>
+	<landmarks.scaled type=matrix rownames=TRUE colnames=FALSE nrow=19 ncol=2 as.numeric=TRUE >
+		Rostrum	6.81632653061224	-18.6938775510204
+		Projecao_posterior_rostrum	24.5714285714286	-18.0816326530612
+		Antirostrum	8.95918367346939	-15.734693877551
+		Projecao_posterior_antirostrum	22.7755102040816	-15.2448979591837
+		Projecao_ventral_antirostrum	9.20408163265306	-23.1224489795918
+		Projecao_posterior_proj_ventral_antirostrum	23.1836734693878	-22.7959183673469
+		Altura_dorsal	17.3877551020408	-13.0204081632653
+		Altura_ventral	17.3877551020408	-25.5918367346939
+		Inicio_ostium_rostrum	6.85714285714286	-19.5102040816327
+		Curvatura_ostium_rostrum	13.7755102040816	-18.8979591836735
+		Inicio_cauda_rostrum	14.3469387755102	-17.6734693877551
+		Curvatura_cauda_1_rostrum	20.1428571428571	-18.6530612244898
+		Curvatura_cauda_2_rostrum	20.9591836734694	-20.0408163265306
+		Fim_cauda	21.8571428571429	-22.3061224489796
+		Curvatura_cauda_2_antirostrum	22.0612244897959	-19.1020408163265
+		Curvatura_cauda_1_antirostrum	20.7959183673469	-17.0816326530612
+		Inicio_cauda_antirostrum	13.5714285714286	-16.1428571428571
+		Curvatura_ostium_antirostrum	12.530612244898	-15.2857142857143
+		Inicio_ostium_antirostrum	8.6734693877551	-16.2244897959184
+	</landmarks.scaled>
+	<curves.control type=list>
+		<sulcus_dorsal type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			425	795
+			1071	1093
+		</sulcus_dorsal>
+		<sulcus_ventral type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			336	956
+			1071	1093
+		</sulcus_ventral>
+		<otolito_dorsal type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			439	771
+			1116	747
+		</otolito_dorsal>
+		<otolito_ventral type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			334	916
+			1116	747
+		</otolito_ventral>
+		<abertura_ostium type=matrix rownames=FALSE colnames=FALSE nrow=2 ncol=2 as.numeric=TRUE >
+			334	916
+			439	771
+		</abertura_ostium>
+	</curves.control>
+	<curves.pixel type=list>
+	</curves.pixel>
+	<checker.pixel type=matrix rownames=FALSE colnames=FALSE nrow=18 ncol=2 as.numeric=TRUE >
+		162.960419366082	379.672552911061
+		160.632650432993	280.043925429496
+		167.784035464768	182.573175848253
+		253.890066795697	382.091910715047
+		260.228394128856	279.473186930909
+		261.238080869495	185.986649320807
+		353.805989480743	383.680707025364
+		352.561984793762	289.279657050921
+		360.735630841336	190.224016716006
+		449.674633081359	382.685449091972
+		447.166656110658	284.872139211983
+		451.854575122882	192.988009842656
+		542.483711751934	390.327438681376
+		552.545034207229	289.704935869681
+		541.331384391336	189.026217529808
+		637.375697629062	395.203640828975
+		641.204528120207	296.720616847449
+		645.325577958537	193.696421443804
+	</checker.pixel>
+</shapes>
+
